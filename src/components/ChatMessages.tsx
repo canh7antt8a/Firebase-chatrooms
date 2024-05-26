@@ -16,6 +16,7 @@ export default function ChatMessages({ scrollRef, id, chatType }: chatProps) {
 
   return (
     <Flex
+      //@ts-ignore
       grow="1"
       align="start"
       direction="column"

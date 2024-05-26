@@ -27,6 +27,7 @@ export default function Chatroom() {
       {!isMobile && <Sidebar />}
       <Flex
         direction="column"
+        //@ts-ignore
         grow="1"
         height="100vh"
         maxWidth="100%"
