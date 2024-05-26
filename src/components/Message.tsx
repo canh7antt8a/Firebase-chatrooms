@@ -2,13 +2,18 @@ import { Box, Text, useColorMode } from "@chakra-ui/react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebaseConfig";
 import { messageProps } from "../utils/types";
-
-export default function Message({ message, photoURL, id }: messageProps) {
+import { useEffect } from "react";
+import moment from 'moment'
+export default function Message({ message, photoURL, id, createdAt }: messageProps) {
   const { colorMode } = useColorMode()
   const [user] = useAuthState(auth)
   const { uid } = user
   const bgColor = { light: "gray.300", dark: "gray.600"}
   const textColor = { light: "black", dark: "white"}
+  useEffect(()=>{
+    console.log(createdAt?.toDate());
+    
+  }, [createdAt])
   return (
     <Box
       bg={uid == id ? "blue.500" : bgColor[colorMode]}
@@ -24,6 +29,7 @@ export default function Message({ message, photoURL, id }: messageProps) {
       color={uid == id ? "white" : textColor[colorMode]}
       >
       <Text>{message}</Text>
+      <Text fontSize={10}>{moment(createdAt?.toDate()).format("hh:mm DD/MM/YYYY")}</Text>
     </Box>
   )
 }

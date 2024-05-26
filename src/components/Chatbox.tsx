@@ -44,7 +44,7 @@ export default function Chatbox({ scrollRef, id, chatType }: chatProps) {
           placeholder="Type Message"
         />
         <Button size="lg" type="submit" onClick={sendMessage}>
-          Send
+          Gửi
         </Button>
       </FormControl>
     </Flex>

@@ -43,7 +43,7 @@ export default function RoomsHeader({ chatData, user }: chatHeadertypes) {
         <Heading size={isMobile ? "md" : "lg"} isTruncated>{chatData.roomName}</Heading>
         {!isMobile && <Text>Last Active: {timeAgo}</Text>}
       </Box>
-      <ChatModal type="addPeople" title="Add People" />
+      <ChatModal type="addPeople" title="Thêm người" />
     </Flex>
   )
 }

@@ -11,11 +11,12 @@ export default function ChatMessages({ scrollRef, id, chatType }: chatProps) {
     query(collection(db, `${chatType}`, id, "messages"), orderBy("createdAt", 'asc'))
   )
   const messages = values?.map(msg => (
-    <Message key={Math.random()} id={msg.uid} message={msg.Message} photoURL={msg.photoURL} />
+    <Message key={Math.random()} id={msg.uid} message={msg.Message} photoURL={msg.photoURL} createdAt={msg.createdAt}/>
   ))
 
   return (
     <Flex
+      //@ts-ignore
       grow="1"
       align="start"
       direction="column"

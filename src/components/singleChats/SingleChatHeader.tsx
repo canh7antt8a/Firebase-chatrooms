@@ -52,7 +52,7 @@ export default function SingleChatHeader({ chatData, user }: chatHeadertypes) {
       }
       <Box maxWidth="70%" >
         <Heading size="md" isTruncated>{headingName}</Heading>
-        <Text >Last Active: {timeAgo}</Text>
+        <Text >Hoạt động cuối: {timeAgo}</Text>
       </Box>
     </Flex>
   )

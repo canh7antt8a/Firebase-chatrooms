@@ -81,20 +81,20 @@ export const Login = () => {
             size='lg'
             textAlign="center"
           >
-            F.R.I.E.N.D.S Chat
+           ALEX Chat
           </Heading>
-          <Input name="email" onChange={handleChange} size={isMobile ? "md" : "lg"} placeholder="Username Or Email" variant="flushed" height="2rem" mb="10px" />
-          <Input name="pass" onChange={handleChange} size={isMobile ? "md" : "lg"} placeholder="Password" variant="flushed" height="2rem" mb="10px" />
+          <Input name="email" onChange={handleChange} size={isMobile ? "md" : "lg"} placeholder="Tài khoản/ email" variant="flushed" height="2rem" mb="10px" />
+          <Input name="pass" onChange={handleChange} size={isMobile ? "md" : "lg"} placeholder="Mật khẩu" variant="flushed" height="2rem" mb="10px" />
 
           <>
             <Flex w="100%" mt="10px" mb="10px" justify={signup ? "center" : "space-between"}>
               {
                 signup ?
-                  <Button onClick={createUser} borderRadius='20px' w="70%" size="md" >Sign up</Button>
+                  <Button onClick={createUser} borderRadius='20px' w="70%" size="md" >Đăng nhập</Button>
                   :
                   <>
                     <Button mx="10px" onClick={signInEmail} borderRadius='20px' w="50%" size="sm" >Login</Button>
-                    <Button onClick={guestSign} borderRadius='20px' w="50%" size="sm" >Guest Login</Button>
+                    <Button onClick={guestSign} borderRadius='20px' w="50%" size="sm" >Ẩn danh</Button>
                   </>
               }
             </Flex>
@@ -103,7 +103,7 @@ export const Login = () => {
               <Text>Or</Text>
               <Divider />
             </Stack>
-            <Flex
+            {/* <Flex
               p="5px"
               borderRadius="10px"
               alignItems="center"
@@ -115,9 +115,9 @@ export const Login = () => {
             >
               <Icon mr="5px" w="25px" h="25px" as={FcGoogle} />
               <Text fontSize="sm">Sign In With Google</Text>
-            </Flex>
+            </Flex> */}
             <Flex mt="15px">
-              <Text fontSize="sm">{signup ? "Have An Account?" : "New Friend?"} </Text>
+              <Text fontSize="sm">{signup ? "Chưa có tài khoản?" : "Đăng ký?"} </Text>
               <Text
                 onClick={() => setSignup(!signup)}
                 cursor="pointer"
@@ -126,7 +126,7 @@ export const Login = () => {
                 fontSize="sm"
                 ml="5px"
               >
-                {signup ? "Login" : "Create Account"}
+                {signup ? "Đăng nhập" : "Tạo tài khoản"}
               </Text>
             </Flex>
           </>
