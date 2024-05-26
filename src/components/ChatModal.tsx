@@ -69,8 +69,8 @@ export default function ChatModal({ type, title }: chatModalProps) {
     }
   }
 
-  const header = type === "room" ? "Create New Room" : "Add Person To Chat"
-  const placeHolder = type === "room" ? "Room Name" : "Email"
+  const header = type === "room" ? "Tạo phòng mới" : "Thêm người vào chat"
+  const placeHolder = type === "room" ? "Tên phòng" : "Email"
   return (
     <>
       <Button size={isMobile ? "sm" : "md"} onClick={onOpen}>{title}</Button>
@@ -82,7 +82,7 @@ export default function ChatModal({ type, title }: chatModalProps) {
           <ModalBody>
             <FormControl isInvalid={!isValid}>
               <Input placeholder={placeHolder} value={chatName} onChange={handleChange} />
-              <FormErrorMessage>{type === "room" ? "Cannot be empty" : "Email is required"}.</FormErrorMessage>
+              <FormErrorMessage>{type === "room" ? "Không được để trống" : "Email yêu cầu"}.</FormErrorMessage>
             </FormControl>
           </ModalBody>
           <ModalFooter>
@@ -93,7 +93,7 @@ export default function ChatModal({ type, title }: chatModalProps) {
               onClick={handleSubmit}
               variant='ghost'
             >
-              {type === "room" ? "Create Room" : type === "addPeople" ? "Add Person" : "Create Chat"}
+              {type === "room" ? "Tạo phòng" : type === "addPeople" ? "Thêm người" : "Tạo chat"}
             </Button>
           </ModalFooter>
         </ModalContent>

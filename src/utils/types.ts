@@ -16,6 +16,7 @@ export type messageProps = {
   message: string,
   photoURL?: string,
   id: string
+  createdAt?: any
 }
 
 export type chatHeadertypes = {

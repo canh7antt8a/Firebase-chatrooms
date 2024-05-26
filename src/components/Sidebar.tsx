@@ -57,13 +57,13 @@ const Sidebar = ({ fullWidth }: { fullWidth?: boolean }) => {
           <Avatar src={user.photoURL} />
           <Stack maxWidth="30vw" direction="row" align="center">
             <IconButton
-              aria-label='Sign Out'
+              aria-label='Đăng xuất'
               icon={<Icon as={IoLogOut} />}
               onClick={handleLogOut}
               isRound
             />
             <IconButton
-              aria-label='Toggle Dark Mode'
+              aria-label='Chế độ tối'
               icon={colorMode === "light" ? <Icon as={IoMoon} /> : <Icon as={IoSunny} />}
               onClick={toggleColorMode}
               isRound
@@ -71,13 +71,14 @@ const Sidebar = ({ fullWidth }: { fullWidth?: boolean }) => {
           </Stack>
         </Flex>
         <Stack direction="row" align="center" p="10px">
-          <ChatModal type="room" title="Create New Room" />
-          <ChatModal type="chat" title="Add Chat" />
+          <ChatModal type="room" title="Tạo phòng chat" />
+          <ChatModal type="chat" title="Chat với" />
         </Stack>
       </Flex>
       <Stack
         direction="column"
         overflow="scroll"
+        flex={1}
       >
         {rooms}
         {chats}
